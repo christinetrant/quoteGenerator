@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="center">
+      {/* <div className="slanted">
+        <h2>Hello World!</h2>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
+          et debitis pariatur perferendis adipisci doloribus aspernatur ea quo
+          illum a.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div> */}
+
+      <blockquote>
+        <p>
+          Minimalists always act so superior, like “Oh, we’re not hoarding.”
+          That’s bullshit, they’re just hoarding space.
+        </p>
+        <cite>
+          <a href="https://www.brucelawson.co.uk/2013/on-citing-quotations-again/">
+            Douglas Coupland
+          </a>
+        </cite>
+        <div className="slanted"></div>
+      </blockquote>
     </div>
   );
 }
