@@ -1,0 +1,18 @@
+*,
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin-top: 10vh;
+  background: #003f5b;
+  /* https://www.transparenttextures.com/ */
+  background-image: url("./diamonds-light.png");
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

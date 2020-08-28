@@ -1,0 +1,60 @@
+blockquote {
+  width: 60%; /* 640px */
+  height: 70vh; /* 800px */
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+}
+
+.slanted {
+  background: #d0f0df;
+  background: -webkit-linear-gradient(
+    to bottom right,
+    #d0f0df,
+    #e7ebcd,
+    #efcedf
+  );
+  background: -o-linear-gradient(to bottom right, #d0f0df, #e7ebcd, #efcedf);
+  background: -moz-linear-gradient(to bottom right, #d0f0df, #e7ebcd, #efcedf);
+  background: linear-gradient(to bottom right, #d0f0df, #e7ebcd, #efcedf);
+  min-width: 75%; /* 500px */
+  height: 70vh; /* 700px */
+  position: absolute;
+  align-self: center;
+  z-index: -1;
+  clip-path: polygon(0% 15%, 100% 0%, 100% 85%, 0 100%);
+  -webkit-clip-path: polygon(0% 15%, 100% 0%, 100% 85%, 0 100%);
+}
+blockquote,
+cite {
+  text-shadow: 2px 2px #d0f0df;
+}
+blockquote p {
+  font: 2.6rem "Abril Fatface", cursive;
+  padding: 20px;
+  color: #000;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+}
+cite {
+  text-align: right;
+  padding-right: 5%;
+  font: normal 1.2em "Josefin Sans", sans-serif;
+  text-decoration: none;
+  color: #000;
+  /* padding: 10px; */
+  font-style: italic;
+}
+/* cite:before {
+  content: "- ";
+} */
+.hidden {
+  display: none;
+}
+@media only screen and (max-width: 700px) {
+  blockquote {
+    width: 90%;
+  }
+}
