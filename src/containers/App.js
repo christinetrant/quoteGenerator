@@ -7,39 +7,44 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      quotes: null,
-      randomQuote: "",
+      allQuotes: null,
+      singleQuote: "",
       // isConnected: false,
     };
   }
 
   componentDidMount() {
+    this.getAllQuotes();
+  }
+
+  getAllQuotes = () => {
     const API = "https://type.fit/api/quotes";
     fetch(API)
       .then((response) => response.json())
       .then((data) => {
         console.log(data[0].text);
-        return this.setState({ quotes: data });
-        // console.log("state", this.state.quotes[0].text);
+        this.setState({
+          singleQuote: data[Math.floor(Math.random() * data.length)],
+        });
+        return this.setState({ allQuotes: data });
+        // console.log("state", this.state.allQuotes[0].text);
       });
-  }
+  };
 
-  getRandomQuote = () => {
-    const { quotes } = this.state;
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-
-    // console.log(randomQuote);
-    this.setState({ randomQuote });
+  getSingleQuote = () => {
+    const { allQuotes } = this.state;
+    const singleQuote = allQuotes[Math.floor(Math.random() * allQuotes.length)];
+    // console.log(singleQuote);
+    this.setState({ singleQuote });
   };
   render() {
-    // return <Quote quote={this.state.quotes} />;
     return (
       <Fragment>
         <Quote
-          randomQuote={this.state.randomQuote}
+          singleQuote={this.state.singleQuote}
           isConnected={this.state.isConnected}
         />
-        <Button getRandomQuote={this.getRandomQuote} />
+        <Button getSingleQuote={this.getSingleQuote} />
       </Fragment>
     );
   }

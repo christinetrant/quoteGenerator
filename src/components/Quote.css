@@ -31,7 +31,8 @@ cite {
   text-shadow: 2px 2px #d0f0df;
 }
 blockquote p {
-  font: 2.6rem "Abril Fatface", cursive;
+  font-family: "Abril Fatface", cursive;
+  font-size: 2.6rem;
   padding: 20px;
   color: #000;
   text-align: center;
@@ -41,20 +42,50 @@ blockquote p {
 cite {
   text-align: right;
   padding-right: 5%;
-  font: normal 1.2em "Josefin Sans", sans-serif;
   text-decoration: none;
   color: #000;
-  /* padding: 10px; */
   font-style: italic;
 }
-/* cite:before {
-  content: "- ";
-} */
-.hidden {
-  display: none;
+
+/* CSS Loading Spinner */
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   blockquote {
     width: 90%;
+  }
+  blockquote p {
+    font-size: 1.8rem;
   }
 }

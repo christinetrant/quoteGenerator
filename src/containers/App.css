@@ -9,6 +9,8 @@ body {
   background: #003f5b;
   /* https://www.transparenttextures.com/ */
   background-image: url("./diamonds-light.png");
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 100%;
 }
 
 .center {
