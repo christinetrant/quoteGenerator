@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Quote from "../components/Quote";
 import Button from "../components/Button";
+import Loader from "../components/Loader";
 import "./App.css";
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
     this.state = {
       allQuotes: null,
       singleQuote: "",
-      // isConnected: false,
+      isConnected: false,
     };
   }
 
@@ -26,6 +27,7 @@ class App extends Component {
         this.setState({
           singleQuote: data[Math.floor(Math.random() * data.length)],
         });
+        this.setState({ isConnected: true });
         return this.setState({ allQuotes: data });
         // console.log("state", this.state.allQuotes[0].text);
       });
@@ -37,8 +39,11 @@ class App extends Component {
     // console.log(singleQuote);
     this.setState({ singleQuote });
   };
+
   render() {
-    return (
+    return !this.state.isConnected ? (
+      <Loader />
+    ) : (
       <Fragment>
         <Quote
           singleQuote={this.state.singleQuote}
